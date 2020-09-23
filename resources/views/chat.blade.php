@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-md-12 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Chats</div>
 
