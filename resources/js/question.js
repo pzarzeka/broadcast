@@ -27,29 +27,31 @@ window.Vue = require('vue');
 
 import QuestionForm from './components/question/QuestionForm';
 import QuestionsList from './components/question/QuestionsList';
+import AdminQuestionList from './components/question/AdminQuestionList';
 
 const app = new Vue({
     el: '#app',
 
     data: {
-        questions: []
+        questions: [],
+        // questionsNew: [],
     },
 
     created() {
         this.fetchQuestions();
 
         Echo.private('question')
-            .listen('NewMessage', (e) => {
+            .listen('NewQuestion', (e) => {
                 this.questions.push({
                     question: e.question.question,
                     user: e.user
                 });
             })
-            .listen('AcceptedMessage', (e) => {
+            /*.listen('AcceptedMessage', (e) => {
                 this.questions.push({
                     question: e.question.question,
                 });
-            })
+            })*/
         ;
     },
 
@@ -62,12 +64,17 @@ const app = new Vue({
 
         addQuestion(question) {
             axios.post('/question/store', question).then(response => {});
+
+            this.questions.push({
+                question: question
+            });
         }
     },
 
     components: {
         QuestionForm,
-        QuestionsList
+        QuestionsList,
+        AdminQuestionList
     }
 
 });

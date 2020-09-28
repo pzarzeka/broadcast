@@ -23,7 +23,7 @@
 
         methods: {
             sendQuestion() {
-                this.$emit('questionsent', {
+                this.$emit('newquestion', {
                     user: this.user,
                     question: this.newQuestion
                 });

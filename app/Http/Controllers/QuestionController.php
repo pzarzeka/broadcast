@@ -22,7 +22,7 @@ class QuestionController extends Controller
 
     public function question($id = null)
     {
-        return [];
+        return Question::all();
     }
 
     public function store(Request $request)
@@ -36,12 +36,6 @@ class QuestionController extends Controller
         broadcast(new NewQuestion($user, $question))->toOthers();
 
         return ['status' => 'Message Sent!'];
-
-
-        $question = new Question($request->all());
-        $question->save();
-
-        return true;
     }
 
     public function edit()

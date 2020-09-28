@@ -17,7 +17,9 @@ class Question extends Migration
             $table->id();
             $table->integer('user_id')->unsigned();
             $table->text('question');
+            $table->boolean('accepted')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

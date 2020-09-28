@@ -14,7 +14,7 @@
                     </div>
                     <div class="panel-footer">
                         <question-form
-                            v-on:questionsent="addQuestion"
+                            v-on:newquestion="addQuestion"
                             :user="{{ Auth::user() }}"
                         ></question-form>
                     </div>
