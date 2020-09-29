@@ -42,12 +42,14 @@ const app = new Vue({
 
         Echo.private('question')
             .listen('NewQuestion', (e) => {
+                console.log(e.question);
                 this.questions.push({
                     question: e.question.question,
+                    id: e.question.id,
                     user: e.user
                 });
             })
-            .listen('AcceptedMessage', (e) => {
+            .listen('AcceptedQuestion', (e) => {
                 this.questionsAccepted.push({
                     question: e.question.question,
                 });

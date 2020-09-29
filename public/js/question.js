@@ -1931,9 +1931,9 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/question/accept', {
         questionId: questionId
       }).then(function (response) {
-        _this.$emit('acceptedmessage', {
+        _this.$emit('acceptedquestion', {
           user: _this.user,
-          question: response.question
+          question: response.data.question
         });
       });
     }
@@ -2003,16 +2003,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "QuestionList",
-  props: ['questionsAccepted'],
-  mounted: function mounted() {
-    console.log(this.questionsAccepted);
-  }
+  props: ['questionsAccepted']
 });
 
 /***/ }),
@@ -43671,7 +43664,7 @@ var render = function() {
     _c(
       "ul",
       { staticClass: "list-group" },
-      _vm._l(_vm.questions, function(question) {
+      _vm._l(this.questions, function(question) {
         return _c("li", [
           _c("label", [
             _vm._v(
@@ -43796,18 +43789,10 @@ var render = function() {
   return _c(
     "ul",
     { staticClass: "chat" },
-    _vm._l(_vm.questionsAccepted, function(question) {
+    _vm._l(this.questionsAccepted, function(question) {
       return _c("li", { staticClass: "left clearfix" }, [
-        _c("div", { staticClass: "questions-list-body clearfix" }, [
-          _c("div", { staticClass: "header" }),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                " +
-                _vm._s(question.question) +
-                "\n            "
-            )
-          ])
+        _c("div", { staticClass: "question-list-body clearfix" }, [
+          _c("p", [_vm._v(_vm._s(question.question))])
         ])
       ])
     }),
@@ -56289,11 +56274,14 @@ var app = new Vue({
 
     this.fetchQuestions();
     Echo["private"]('question').listen('NewQuestion', function (e) {
+      console.log(e.question);
+
       _this.questions.push({
         question: e.question.question,
+        id: e.question.id,
         user: e.user
       });
-    }).listen('AcceptedMessage', function (e) {
+    }).listen('AcceptedQuestion', function (e) {
       _this.questionsAccepted.push({
         question: e.question.question
       });

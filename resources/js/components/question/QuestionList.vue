@@ -2,9 +2,7 @@
     <ul class="chat">
         <li class="left clearfix" v-for="question in this.questionsAccepted">
             <div class="question-list-body clearfix">
-                <p>
-                    {{ question.question }}
-                </p>
+                <p>{{ question.question }}</p>
             </div>
         </li>
     </ul>

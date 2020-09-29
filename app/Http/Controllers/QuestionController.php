@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\AcceptedQuestion;
 use App\Events\MessageSent;
 use App\Events\NewQuestion;
 use App\Models\Question;
@@ -35,7 +36,7 @@ class QuestionController extends Controller
 
         broadcast(new NewQuestion($user, $question))->toOthers();
 
-        return ['status' => 'Message Sent!'];
+        return ['question' => $question];
     }
 
     public function edit()
@@ -52,10 +53,13 @@ class QuestionController extends Controller
     {
 //        dd($request->all());
         $question = Question::find($request->get('questionId'));
+//        dd($question);
         $question->accepted = true;
         $question->save();
 
-        return $question;
+        broadcast(new AcceptedQuestion($question))->toOthers();
+
+        return ['question' => $question];
     }
 
     public function questionAccepted()

@@ -1,7 +1,7 @@
 <template>
     <div class="panel-body">
         <ul class="list-group">
-            <li v-for="question in questions">
+            <li v-for="question in this.questions">
                 <label>
                     {{ question.question }}
                 </label>
@@ -18,9 +18,9 @@
         methods: {
             acceptAnswer(questionId) {
                 axios.post('/question/accept', {questionId: questionId}).then(response => {
-                    this.$emit('acceptedmessage', {
+                    this.$emit('acceptedquestion', {
                         user: this.user,
-                        question: response.question
+                        question: response.data.question
                     });
                 });
             }
