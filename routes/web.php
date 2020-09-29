@@ -30,7 +30,11 @@ Route::post('messages', [ChatsController::class, 'sendMessage']);
 
 
 Route::get('/', [QuestionController::class, 'index']);
+Route::post('/question/accepted', [QuestionController::class, 'questionAccepted']);
 Route::get('/question/{id?}', [QuestionController::class, 'question']);
 Route::post('/question/store', [QuestionController::class, 'store']);
+Route::post('/question/accept', [QuestionController::class, 'accept']);
+
+
 
 Route::get('/admin/question/list', [AdminController::class, 'questionList']);

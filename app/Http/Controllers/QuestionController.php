@@ -48,9 +48,19 @@ class QuestionController extends Controller
 
     }
 
-    public function status()
+    public function accept(Request $request)
     {
+//        dd($request->all());
+        $question = Question::find($request->get('questionId'));
+        $question->accepted = true;
+        $question->save();
 
+        return $question;
+    }
+
+    public function questionAccepted()
+    {
+        return Question::where('accepted', true)->get();
     }
 
 }

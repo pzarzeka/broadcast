@@ -26,7 +26,7 @@ window.Vue = require('vue');
  */
 
 import QuestionForm from './components/question/QuestionForm';
-import QuestionsList from './components/question/QuestionsList';
+import QuestionList from './components/question/QuestionList';
 import AdminQuestionList from './components/question/AdminQuestionList';
 
 const app = new Vue({
@@ -34,7 +34,7 @@ const app = new Vue({
 
     data: {
         questions: [],
-        // questionsNew: [],
+        questionsAccepted: [],
     },
 
     created() {
@@ -47,11 +47,11 @@ const app = new Vue({
                     user: e.user
                 });
             })
-            /*.listen('AcceptedMessage', (e) => {
-                this.questions.push({
+            .listen('AcceptedMessage', (e) => {
+                this.questionsAccepted.push({
                     question: e.question.question,
                 });
-            })*/
+            })
         ;
     },
 
@@ -59,6 +59,10 @@ const app = new Vue({
         fetchQuestions() {
             axios.get('/question').then(response => {
                 this.questions = response.data;
+            });
+
+            axios.post('/question/accepted').then(response => {
+                this.questionsAccepted = response.data;
             });
         },
 
@@ -73,7 +77,7 @@ const app = new Vue({
 
     components: {
         QuestionForm,
-        QuestionsList,
+        QuestionList,
         AdminQuestionList
     }
 

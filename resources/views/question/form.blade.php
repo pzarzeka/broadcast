@@ -10,7 +10,7 @@
                     <div class="">Below you can see only accepted questions</div>
 
                     <div class="panel-body">
-                        <questions-list :questions="questions"></questions-list>
+                        <question-list :questions-accepted="questionsAccepted"></question-list>
                     </div>
                     <div class="panel-footer">
                         <question-form

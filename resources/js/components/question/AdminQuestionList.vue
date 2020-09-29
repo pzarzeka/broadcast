@@ -1,16 +1,12 @@
 <template>
     <div class="panel-body">
-        <ul class="list-group" v-for="question in questions">
-            <div class="checkbox">
+        <ul class="list-group">
+            <li v-for="question in questions">
                 <label>
                     {{ question.question }}
                 </label>
-            </div>
-            <!--<div class="pull-right action-buttons">
-                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-            </div>-->
+                <a href="#" @click="acceptAnswer(question.id)">Akceptuj</a>
+            </li>
         </ul>
     </div>
 </template>
@@ -18,7 +14,17 @@
 <script>
     export default {
         name: "AdminQuestionList",
-        props: ['questions']
+        props: ['questions', 'questionsAccepted'],
+        methods: {
+            acceptAnswer(questionId) {
+                axios.post('/question/accept', {questionId: questionId}).then(response => {
+                    this.$emit('acceptedmessage', {
+                        user: this.user,
+                        question: response.question
+                    });
+                });
+            }
+        }
     }
 </script>
 
