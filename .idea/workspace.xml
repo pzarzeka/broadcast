@@ -20,12 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4923f566-7757-4a2f-8095-24395bff3bdc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/speaker/question_list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/question/AdminQuestionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/question/AdminQuestionList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/question/QuestionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/question/QuestionList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/question/QuestionForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/question/QuestionForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/question/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/question/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,17 +184,33 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../espu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../support.softwebo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.idesettings.quicklists" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.watch-poll">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="watch-poll" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch-poll" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.watch-poll" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -196,7 +223,8 @@
       <option name="presentableId" value="Default" />
       <updated>1600764021009</updated>
       <workItem from="1600764022097" duration="9213000" />
-      <workItem from="1600955091015" duration="23091000" />
+      <workItem from="1600955091015" duration="24730000" />
+      <workItem from="1601883402621" duration="12660000" />
     </task>
     <servers />
   </component>
@@ -220,46 +248,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600864581197" />
+    <state x="745" y="295" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601905153695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="745" y="295" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601905153695" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601384889294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601384889294" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601374277542">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601890243828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601374277542" />
-    <state width="1293" height="282" key="GridCell.Tab.0.bottom" timestamp="1601379721785">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601890243828" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1601900133606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601379721785" />
-    <state width="1293" height="282" key="GridCell.Tab.0.center" timestamp="1601379721785">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601900133606" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1601900133605">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601379721785" />
-    <state width="1293" height="282" key="GridCell.Tab.0.left" timestamp="1601379721785">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601900133605" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1601900133605">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601379721785" />
-    <state width="1293" height="282" key="GridCell.Tab.0.right" timestamp="1601379721785">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601900133605" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1601900133606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601379721785" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601900133606" />
     <state x="673" y="243" key="NewPhpClassDialog" timestamp="1600871706885">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="673" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600871706885" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1600870453272">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1601898448711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600870453272" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601898448711" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1601302231691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601302231691" />
-    <state x="419" y="110" width="1095" height="833" key="find.popup" timestamp="1601304117932">
+    <state x="419" y="110" width="1095" height="833" key="find.popup" timestamp="1601900559204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="419" y="110" width="1095" height="833" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601304117932" />
+    <state x="419" y="110" width="1095" height="833" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601900559204" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1600862980556">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

@@ -42,7 +42,7 @@ const app = new Vue({
 
         Echo.private('question')
             .listen('NewQuestion', (e) => {
-                console.log(e.question);
+                // console.log(e.question);
                 this.questions.push({
                     question: e.question.question,
                     id: e.question.id,

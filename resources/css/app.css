@@ -1,3 +1,6 @@
 html,body {
     height: 100%;
 }
+
+a.accept-answer {color: #2d995b;}
+a.reject-answer {color: #e3342f;}

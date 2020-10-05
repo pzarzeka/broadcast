@@ -23,7 +23,7 @@ class QuestionController extends Controller
 
     public function question($id = null)
     {
-        return Question::all();
+        return Question::where('accepted', false)->get();
     }
 
     public function store(Request $request)
@@ -44,16 +44,17 @@ class QuestionController extends Controller
 
     }
 
-    public function delete()
+    public function delete(Request $request)
     {
+        $question = Question::find($request->get('questionId'));
+        $question->delete();
 
+        return ['question' => $question];
     }
 
     public function accept(Request $request)
     {
-//        dd($request->all());
         $question = Question::find($request->get('questionId'));
-//        dd($question);
         $question->accepted = true;
         $question->save();
 

@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 class AdminController
 {
 
-    public function questionList()
+    public function list()
     {
         return view('admin.question_list');
     }

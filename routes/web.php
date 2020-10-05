@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SpeakerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,8 @@ Route::post('/question/accepted', [QuestionController::class, 'questionAccepted'
 Route::get('/question/{id?}', [QuestionController::class, 'question']);
 Route::post('/question/store', [QuestionController::class, 'store']);
 Route::post('/question/accept', [QuestionController::class, 'accept']);
+Route::post('/question/delete', [QuestionController::class, 'delete']);
 
+Route::get('/admin', [AdminController::class, 'list']);
 
-
-Route::get('/admin/question/list', [AdminController::class, 'questionList']);
+Route::get('/speaker', [SpeakerController::class, 'list']);

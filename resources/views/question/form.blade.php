@@ -2,16 +2,13 @@
 
 @section('content')
 
-    <div class="container h-100">
-        <div class="row justify-content-center h-100">
+    <div class="container">
+        <div class="row align-items-center" style="height: 500px;">
             <div class="col-md-12 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Questions</div>
-                    <div class="">Below you can see only accepted questions</div>
-
-                    <div class="panel-body">
+                    {{--<div class="panel-body">
                         <question-list :questions-accepted="questionsAccepted"></question-list>
-                    </div>
+                    </div>--}}
                     <div class="panel-footer">
                         <question-form
                             v-on:newquestion="addQuestion"

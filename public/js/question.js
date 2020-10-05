@@ -1921,6 +1921,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AdminQuestionList",
   props: ['questions', 'questionsAccepted'],
@@ -1935,7 +1942,24 @@ __webpack_require__.r(__webpack_exports__);
           user: _this.user,
           question: response.data.question
         });
+
+        _this.refreshQuestionsList(response.data.question);
       });
+    },
+    declineAnswer: function declineAnswer(questionId) {
+      var _this2 = this;
+
+      axios.post('/question/delete', {
+        questionId: questionId
+      }).then(function (response) {
+        _this2.refreshQuestionsList(response.data.question);
+      });
+    },
+    refreshQuestionsList: function refreshQuestionsList(question) {
+      var i = this.questions.map(function (item) {
+        return item.id;
+      }).indexOf(question.id);
+      this.questions.splice(i, 1);
     }
   }
 });
@@ -1951,8 +1975,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -43662,30 +43684,43 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "panel-body" }, [
     _c(
-      "ul",
-      { staticClass: "list-group" },
+      "table",
+      { staticClass: "table" },
       _vm._l(this.questions, function(question) {
-        return _c("li", [
-          _c("label", [
-            _vm._v(
-              "\n                " +
-                _vm._s(question.question) +
-                "\n            "
+        return _c("tr", [
+          _c("td", [_vm._v(_vm._s(question.question))]),
+          _vm._v(" "),
+          _c("td", { staticClass: "text-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "accept-answer",
+                attrs: { href: "#", title: "Accept question" },
+                on: {
+                  click: function($event) {
+                    return _vm.acceptAnswer(question.id)
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fas fa-check-circle" })]
             )
           ]),
           _vm._v(" "),
-          _c(
-            "a",
-            {
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.acceptAnswer(question.id)
+          _c("td", { staticClass: "text-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "reject-answer",
+                attrs: { href: "#", title: "Reject question" },
+                on: {
+                  click: function($event) {
+                    return _vm.declineAnswer(question.id)
+                  }
                 }
-              }
-            },
-            [_vm._v("Akceptuj")]
-          )
+              },
+              [_c("i", { staticClass: "fas fa-times-circle" })]
+            )
+          ])
         ])
       }),
       0
@@ -43751,17 +43786,15 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _c("span", { staticClass: "input-group-btn" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary btn-sm",
-          attrs: { id: "btn-form-question" },
-          on: { click: _vm.sendQuestion }
-        },
-        [_vm._v("\n            Send\n        ")]
-      )
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary btn-sm",
+        attrs: { id: "btn-form-question" },
+        on: { click: _vm.sendQuestion }
+      },
+      [_vm._v("\n        Send\n    ")]
+    )
   ])
 }
 var staticRenderFns = []
@@ -56274,8 +56307,7 @@ var app = new Vue({
 
     this.fetchQuestions();
     Echo["private"]('question').listen('NewQuestion', function (e) {
-      console.log(e.question);
-
+      // console.log(e.question);
       _this.questions.push({
         question: e.question.question,
         id: e.question.id,

@@ -3,11 +3,9 @@
         <input id="btn-input" type="text" name="question" class="form-control input-sm"
                placeholder="Type your question here..." v-model="newQuestion" @keyup.enter="sendQuestion">
 
-        <span class="input-group-btn">
-            <button class="btn btn-primary btn-sm" id="btn-form-question" @click="sendQuestion">
-                Send
-            </button>
-        </span>
+        <button class="btn btn-primary btn-sm" id="btn-form-question" @click="sendQuestion">
+            Send
+        </button>
     </div>
 </template>
 
