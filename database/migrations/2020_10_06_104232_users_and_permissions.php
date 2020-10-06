@@ -17,19 +17,19 @@ class UsersAndPermissions extends Migration
     public function up()
     {
         $admin = User::create([
-            'name' => 'Admin',
+            'name' => 'admin',
             'email' => 'admin@espu.pl',
             'password' => Hash::make('admin_espu_2020')
         ]);
 
         $speaker = User::create([
-            'name' => 'Speaker',
+            'name' => 'speaker',
             'email' => 'speaker@espu.pl',
             'password' => Hash::make('speaker_espu_2020')
         ]);
 
         User::create([
-            'name' => 'User',
+            'name' => 'user',
             'email' => 'user@espu.pl',
             'password' => Hash::make('user_espu_2020')
         ]);

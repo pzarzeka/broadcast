@@ -43762,11 +43762,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Question")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Question")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Accept")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Accept")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Reject")])
+        _c("th", { staticClass: "text-center" }, [_vm._v("Reject")])
       ])
     ])
   }

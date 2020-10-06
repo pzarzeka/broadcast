@@ -26,7 +26,7 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['role:chat|admin']], function () {
-    Route::get('chat', [ChatsController::class, 'index']);
+    Route::get('chat', [ChatsController::class, 'chat']);
     Route::get('messages', [ChatsController::class, 'fetchMessages']);
     Route::post('messages', [ChatsController::class, 'sendMessage']);
 });

@@ -45,6 +45,9 @@ class User extends Authenticatable
         return $this->hasMany(Message::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function questions()
     {
         return $this->hasMany(Question::class);

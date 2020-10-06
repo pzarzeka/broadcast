@@ -3,9 +3,9 @@
         <table class="table" v-if="this.questions.length > 0">
             <thead>
                 <tr>
-                    <th>Question</th>
-                    <th>Accept</th>
-                    <th>Reject</th>
+                    <th class="text-center">Question</th>
+                    <th class="text-center">Accept</th>
+                    <th class="text-center">Reject</th>
                 </tr>
             </thead>
             <tbody>
