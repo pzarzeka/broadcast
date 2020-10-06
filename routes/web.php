@@ -25,18 +25,23 @@ Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('chat', [ChatsController::class, 'index']);
-Route::get('messages', [ChatsController::class, 'fetchMessages']);
-Route::post('messages', [ChatsController::class, 'sendMessage']);
+Route::group(['middleware' => ['role:chat|admin']], function () {
+    Route::get('chat', [ChatsController::class, 'index']);
+    Route::get('messages', [ChatsController::class, 'fetchMessages']);
+    Route::post('messages', [ChatsController::class, 'sendMessage']);
+});
 
-
-Route::get('/', [QuestionController::class, 'index']);
-Route::post('/question/accepted', [QuestionController::class, 'questionAccepted']);
-Route::get('/question/{id?}', [QuestionController::class, 'question']);
+Route::get('/', [QuestionController::class, 'index'])->name('index');
+Route::post('/question/{id?}', [QuestionController::class, 'question'])->where('id', '[0-9]+');
 Route::post('/question/store', [QuestionController::class, 'store']);
 Route::post('/question/accept', [QuestionController::class, 'accept']);
 Route::post('/question/delete', [QuestionController::class, 'delete']);
+Route::post('/question/accepted', [QuestionController::class, 'questionAccepted']);
 
-Route::get('/admin', [AdminController::class, 'list']);
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('/admin', [AdminController::class, 'list'])->name('adminPanel');
+});
 
-Route::get('/speaker', [SpeakerController::class, 'list']);
+Route::group(['middleware' => ['role:speaker']], function () {
+    Route::get('/speaker', [SpeakerController::class, 'list'])->name('speakerPanel');
+});

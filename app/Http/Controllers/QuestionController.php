@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Events\AcceptedQuestion;
-use App\Events\MessageSent;
 use App\Events\NewQuestion;
 use App\Models\Question;
 use Illuminate\Http\Request;
@@ -18,6 +17,12 @@ class QuestionController extends Controller
 
     public function index()
     {
+        if (auth()->user()->hasRole('admin')) {
+            return redirect()->route('adminPanel');
+        } elseif (auth()->user()->hasRole('speaker')) {
+            return redirect()->route('speakerPanel');
+        }
+
         return view('question.form');
     }
 

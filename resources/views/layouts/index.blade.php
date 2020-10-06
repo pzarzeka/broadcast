@@ -55,6 +55,13 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('index') }}">FormPanel</a>
+                                @role('speaker')
+                                    <a class="dropdown-item" href="{{ route('speakerPanel') }}">Speaker</a>
+                                @endrole
+                                @role('admin')
+                                    <a class="dropdown-item" href="{{ route('adminPanel') }}">Admin</a>
+                                @endrole
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -73,8 +80,18 @@
     </nav>
 
     <main class="py-4">
-        @yield('content')
+        <div class="container">
+            <div class="row align-items-center" style="height: calc(100vh - 144px);">
+                @yield('content')
+            </div>
+        </div>
     </main>
+
+    <footer class="bg-white shadow-sm py-2 text-center">
+        <div class="container">
+            Copyright &copy; <a href="https://softwebo.pl">Softwebo.pl</a>
+        </div>
+    </footer>
 </div>
 </body>
 </html>

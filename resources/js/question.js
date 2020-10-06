@@ -42,7 +42,6 @@ const app = new Vue({
 
         Echo.private('question')
             .listen('NewQuestion', (e) => {
-                // console.log(e.question);
                 this.questions.push({
                     question: e.question.question,
                     id: e.question.id,
@@ -59,8 +58,9 @@ const app = new Vue({
 
     methods: {
         fetchQuestions() {
-            axios.get('/question').then(response => {
+            axios.post('/question').then(response => {
                 this.questions = response.data;
+                console.log(this.questions);
             });
 
             axios.post('/question/accepted').then(response => {

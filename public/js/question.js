@@ -1928,6 +1928,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AdminQuestionList",
   props: ['questions', 'questionsAccepted'],
@@ -43683,51 +43695,82 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "panel-body" }, [
-    _c(
-      "table",
-      { staticClass: "table" },
-      _vm._l(this.questions, function(question) {
-        return _c("tr", [
-          _c("td", [_vm._v(_vm._s(question.question))]),
+    this.questions.length > 0
+      ? _c("table", { staticClass: "table" }, [
+          _vm._m(0),
           _vm._v(" "),
-          _c("td", { staticClass: "text-center" }, [
-            _c(
-              "a",
-              {
-                staticClass: "accept-answer",
-                attrs: { href: "#", title: "Accept question" },
-                on: {
-                  click: function($event) {
-                    return _vm.acceptAnswer(question.id)
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fas fa-check-circle" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("td", { staticClass: "text-center" }, [
-            _c(
-              "a",
-              {
-                staticClass: "reject-answer",
-                attrs: { href: "#", title: "Reject question" },
-                on: {
-                  click: function($event) {
-                    return _vm.declineAnswer(question.id)
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fas fa-times-circle" })]
-            )
-          ])
+          _c(
+            "tbody",
+            _vm._l(this.questions, function(question) {
+              return _c("tr", [
+                _c("td", { staticClass: "col-10" }, [
+                  _vm._v(_vm._s(question.question))
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center col-1" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "accept-answer",
+                      attrs: { href: "#", title: "Accept question" },
+                      on: {
+                        click: function($event) {
+                          return _vm.acceptAnswer(question.id)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-check-circle" })]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center col-1" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "reject-answer",
+                      attrs: { href: "#", title: "Reject question" },
+                      on: {
+                        click: function($event) {
+                          return _vm.declineAnswer(question.id)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-times-circle" })]
+                  )
+                ])
+              ])
+            }),
+            0
+          )
         ])
-      }),
-      0
-    )
+      : _c("div", [
+          _c(
+            "p",
+            {
+              staticClass: "alert alert-warning text-center",
+              attrs: { role: "alert" }
+            },
+            [_vm._v("Questions list is empty.")]
+          )
+        ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Question")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Accept")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Reject")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -56307,7 +56350,6 @@ var app = new Vue({
 
     this.fetchQuestions();
     Echo["private"]('question').listen('NewQuestion', function (e) {
-      // console.log(e.question);
       _this.questions.push({
         question: e.question.question,
         id: e.question.id,
@@ -56323,8 +56365,9 @@ var app = new Vue({
     fetchQuestions: function fetchQuestions() {
       var _this2 = this;
 
-      axios.get('/question').then(function (response) {
+      axios.post('/question').then(function (response) {
         _this2.questions = response.data;
+        console.log(_this2.questions);
       });
       axios.post('/question/accepted').then(function (response) {
         _this2.questionsAccepted = response.data;

@@ -20,20 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4923f566-7757-4a2f-8095-24395bff3bdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/speaker/question_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/broadcast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/broadcast.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5284433d-9108-4ede-8d03-1d2488ec94be.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5284433d-9108-4ede-8d03-1d2488ec94be.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/question/AdminQuestionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/question/AdminQuestionList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/question/QuestionForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/question/QuestionForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/question_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/question_list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/question/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/question/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -170,6 +173,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
       <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hxaEJIMZ8jRicWBnBmgkwyyx79" />
@@ -224,7 +228,7 @@
       <updated>1600764021009</updated>
       <workItem from="1600764022097" duration="9213000" />
       <workItem from="1600955091015" duration="24730000" />
-      <workItem from="1601883402621" duration="12660000" />
+      <workItem from="1601883402621" duration="24233000" />
     </task>
     <servers />
   </component>
@@ -288,17 +292,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601302231691" />
-    <state x="419" y="110" width="1095" height="833" key="find.popup" timestamp="1601900559204">
+    <state x="419" y="110" width="1095" height="833" key="find.popup" timestamp="1601983368487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="419" y="110" width="1095" height="833" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601900559204" />
+    <state x="419" y="110" width="1095" height="833" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601983368487" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1600862980556">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600862980556" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1600871947347">
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1601983294478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600871947347" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601983294478" />
   </component>
 </project>
